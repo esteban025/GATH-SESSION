@@ -1,0 +1,94 @@
+/* change font */
+@import "./fonts.css";
+
+:root {
+  --color-dark-page: #2B2D38;
+  --color-pink: #DB2A6B;
+  --color-purple: #6E1FED;
+  --color-cyan: #60D3D9;
+  --color-orange: #FF7E29;
+  --color-yellow: #F4B840;
+  --color-gray-tr: #ffffff90;
+}
+
+/* formated */
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--color-dark-page);
+  font-family: 'Poppins',  monospace;
+  font-weight: 400;
+  font-size: .95rem;
+
+}
+
+
+/* === HEADER === */
+.header-page {
+  width: 100%;
+  padding-block: 1.5rem;
+  max-width: 1250px;
+  margin-inline: auto;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  color: var(--color-pink);
+  font-size: 1.7rem;
+  font-family: 'Merriweather', sans-serif;
+  font-weight: 500;
+  & span {
+    color: white;
+  }
+}
+
+.list-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  & a {
+    color: var(--color-gray-tr);
+    position: relative;
+    transition: color 200ms ease-in-out;
+    padding-bottom: .5rem;
+
+    &:hover {
+      color: white;
+
+      &::before {
+        width: 80%;
+      }
+    }
+
+    &::before {
+      transition: width 200ms ease-in-out;
+      content: "";
+      width: 0%;
+      height: 3px;
+      border-radius: 999px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-pink);
+    }
+
+  }
+}
